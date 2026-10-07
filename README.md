@@ -4,6 +4,7 @@
 ### *Autonomous Multi-Platform 9:16 Viral Reel Engine & Universal Web Video Suite*
 
 [![GitHub Stars](https://img.shields.io/github/stars/jastfan/WebVideoStudio?style=for-the-badge&logo=github&color=5865F2)](https://github.com/jastfan/WebVideoStudio/stargazers)
+[![Official Website](https://img.shields.io/badge/Official_Website-fondpeace.com-00C7B7?style=for-the-badge&logo=googlechrome&logoColor=white)](https://fondpeace.com)
 [![Python Version](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![Playwright](https://img.shields.io/badge/Playwright-Automated%20Stage-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)](https://playwright.dev)
@@ -12,7 +13,8 @@
 
 <br/>
 
-<!-- Social Community Badges -->
+<!-- Community & Social Badges -->
+[![Website](https://img.shields.io/badge/FondPeace-Portal-00C7B7?style=flat-square&logo=safari&logoColor=white)](https://fondpeace.com)
 [![YouTube](https://img.shields.io/badge/YouTube-FondPeace-FF0000?style=flat-square&logo=youtube&logoColor=white)](https://www.youtube.com/channel/UCXUG7LfzEiIgv3Rvf5r01SQ)
 [![Instagram](https://img.shields.io/badge/Instagram-@fondpeacecrazy-E4405F?style=flat-square&logo=instagram&logoColor=white)](https://www.instagram.com/fondpeacecrazy)
 [![Threads](https://img.shields.io/badge/Threads-@fondpeacecrazy-000000?style=flat-square&logo=threads&logoColor=white)](https://www.threads.net/@fondpeacecrazy)
@@ -31,18 +33,44 @@
 
 ---
 
-## 🌐 Connect With Us & Community
+## 🎬 Live Generated Video Output
 
-Join our creator community and watch daily reels generated 100% autonomously by **WebVideoStudio**:
+Experience the actual video output generated 100% autonomously by **WebVideoStudio** — featuring frame-accurate 0.00s audio-visual synchronization, Google DeepMind neural narration, dynamic scrolling, and CapCut bouncy karaoke subtitles:
 
-| Platform | Channel / Profile | Description |
+<div align="center">
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <b>⚡ Live 9:16 Autonomous Reel Output (Preview)</b><br/><br/>
+      <img src="assets/reel_demo.gif" width="300" style="border-radius: 14px; box-shadow: 0 15px 40px rgba(0,0,0,0.6);" alt="Live Autonomous Reel Output Preview" /><br/><br/>
+      <a href="assets/sample_reel.mp4"><b>▶️ Click here to watch / download the full 1080x1920 MP4 Video</b></a><br/>
+      <i>(Clean 60fps audio-video lockstep, DeepMind voiceover & word-level karaoke sync)</i>
+    </td>
+    <td align="center" width="50%">
+      <b>✨ CapCut Neon Marker & Kinetic Captions</b><br/><br/>
+      <img src="assets/capcut_captions.jpg" width="300" style="border-radius: 14px; box-shadow: 0 15px 40px rgba(0,0,0,0.6);" alt="CapCut Neon Marker Captions" /><br/><br/>
+      <a href="assets/cyan_reel.jpg"><b>🌌 View Electric Cyberpunk Reel Theme</b></a><br/>
+      <i>(Highlighter pill tag on spoken words, 3D mind-blown emoji & audio waveform tracking)</i>
+    </td>
+  </tr>
+</table>
+</div>
+
+---
+
+## 🌐 FondPeace Community & Creator Ecosystem
+
+**WebVideoStudio** is proudly developed under the **[FondPeace](https://fondpeace.com)** creative initiative — building autonomous AI pipelines and digital creator tools for modern developers and storytellers:
+
+| Platform | Channel / URL | Purpose & Content |
 | :--- | :--- | :--- |
-| 📺 **YouTube** | [FondPeace Official Channel](https://www.youtube.com/channel/UCXUG7LfzEiIgv3Rvf5r01SQ) | Watch high-retention tech breakdowns, Shorts, and AI guides |
+| 🌐 **Official Website** | [fondpeace.com](https://fondpeace.com) | The primary digital hub for creative tools, AI breakthroughs, and creator products |
+| 📺 **YouTube** | [FondPeace Official Channel](https://www.youtube.com/channel/UCXUG7LfzEiIgv3Rvf5r01SQ) | High-retention tech breakdowns, Shorts, and autonomous pipeline guides |
 | 📸 **Instagram** | [@fondpeacecrazy](https://www.instagram.com/fondpeacecrazy) | Daily viral reels, creator drops, and developer showcases |
-| 🧵 **Threads** | [@fondpeacecrazy](https://www.threads.net/@fondpeacecrazy) | Real-time discussions, open-source highlights & updates |
+| 🧵 **Threads** | [@fondpeacecrazy](https://www.threads.net/@fondpeacecrazy) | Real-time discussions, open-source highlights & community updates |
 | 👥 **Facebook** | [FondPeace Reels](https://www.facebook.com/profile.php?id=61595100991996&sk=reels_tab) | Short-form developer reels and trending software highlights |
 | 🐦 **X (Twitter)** | [@fondpeacecrazy](https://x.com/fondpeacecrazy) | Breaking tech news, AI developments, and changelogs |
-| 💻 **GitHub** | [jastfan / WebVideoStudio](https://github.com/jastfan/WebVideoStudio) | Source code, feature requests, and open-source contributions |
+| 💻 **GitHub** | [jastfan / WebVideoStudio](https://github.com/jastfan/WebVideoStudio) | Open-source codebase, bug reports, and community contributions |
 
 ---
 
@@ -257,7 +285,9 @@ DEFAULT_BRAND_TEXT=@fondpeacecrazy
 ```
 WebVideoStudio/
 ├── assets/                  # High-resolution UI screenshots, reel demos & branding
-│   ├── studio_ui.png        # Desktop studio interface preview
+│   ├── studio_ui.png        # Desktop studio interface preview (with loaded repos)
+│   ├── reel_demo.gif        # Live animated reel preview
+│   ├── sample_reel.mp4      # Broadcast 1080x1920 sample video
 │   ├── reel_preview.jpg     # 9:16 mobile reel visual demo
 │   ├── capcut_captions.jpg  # CapCut kinetic captions showcase
 │   ├── cyan_reel.jpg        # Electric cyan cyberpunk style showcase
@@ -298,5 +328,5 @@ Contributions, feature suggestions, and pull requests are warmly welcomed!
 Distributed under the **MIT License**. See `LICENSE` for more information.
 
 <div align="center">
-<sub>Engineered with precision for viral open-source and developer storytelling. Built with ❤️ by <a href="https://github.com/jastfan">jastfan</a> & <a href="https://www.youtube.com/channel/UCXUG7LfzEiIgv3Rvf5r01SQ">FondPeace</a>.</sub>
+<sub>Engineered with precision for viral open-source and developer storytelling. Built with ❤️ by <a href="https://github.com/jastfan">jastfan</a> & <a href="https://fondpeace.com">FondPeace</a>.</sub>
 </div>
