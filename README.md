@@ -42,7 +42,7 @@ Experience the actual video output generated 100% autonomously by **WebVideoStud
   <tr>
     <td align="center" width="50%">
       <b>⚡ Auto-Playing Live Reel Demo (Animated Preview)</b><br/><br/>
-      <img src="assets/reel_demo.gif" width="320" style="border-radius: 14px; box-shadow: 0 15px 40px rgba(0,0,0,0.6);" alt="Autonomous 9:16 Kinetic Reel Output" /><br/><br/>
+      <img src="assets/autoplay_reel_preview.gif" width="320" style="border-radius: 14px; box-shadow: 0 15px 40px rgba(0,0,0,0.6);" alt="Autonomous 9:16 Kinetic Reel Output" /><br/><br/>
       <a href="assets/sample_reel.mp4"><b>🔊 Click here to watch / listen to the full 1080x1920 MP4 (with DeepMind Voiceover & Sound)</b></a><br/>
       <i>(Continuous auto-playing loop showing kinetic karaoke words & active documentation scrolling)</i>
     </td>
@@ -286,7 +286,7 @@ DEFAULT_BRAND_TEXT=@fondpeacecrazy
 WebVideoStudio/
 ├── assets/                  # High-resolution UI screenshots, reel demos & branding
 │   ├── studio_ui.png        # Desktop studio interface preview (with loaded repos)
-│   ├── reel_demo.gif        # Live animated reel preview
+│   ├── autoplay_reel_preview.gif # Auto-playing animated reel loop
 │   ├── sample_reel.mp4      # Broadcast 1080x1920 sample video
 │   ├── reel_preview.jpg     # 9:16 mobile reel visual demo
 │   ├── capcut_captions.jpg  # CapCut kinetic captions showcase
@@ -327,6 +327,11 @@ Contributions, feature suggestions, and pull requests are warmly welcomed!
 
 Distributed under the **MIT License**. See `LICENSE` for more information.
 
+---
+
 <div align="center">
-<sub>Engineered with precision for viral open-source and developer storytelling. Built with ❤️ by <a href="https://github.com/jastfan">jastfan</a> & <a href="https://fondpeace.com">FondPeace</a>.</sub>
+
+**Engineered with precision for viral open-source and developer storytelling.**  
+Built with ❤️ by [jastfan](https://github.com/jastfan) & [FondPeace](https://fondpeace.com).
+
 </div>
