@@ -1,9 +1,9 @@
 <div align="center">
 
-# 🚀 WebVideoStudio
+# 🚀 FondPeaceStudio
 ### *Autonomous Multi-Platform 9:16 Viral Reel Engine & Universal Web Video Suite*
 
-[![GitHub Stars](https://img.shields.io/github/stars/jastfan/WebVideoStudio?style=for-the-badge&logo=github&color=5865F2)](https://github.com/jastfan/WebVideoStudio/stargazers)
+[![GitHub Stars](https://img.shields.io/github/stars/jastfan/FondPeaceStudio?style=for-the-badge&logo=github&color=5865F2)](https://github.com/jastfan/FondPeaceStudio/stargazers)
 [![Official Website](https://img.shields.io/badge/Official_Website-fondpeace.com-00C7B7?style=for-the-badge&logo=googlechrome&logoColor=white)](https://fondpeace.com)
 [![Python Version](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
@@ -27,7 +27,7 @@
 
 <br/>
 
-<img src="assets/studio_ui.png" alt="WebVideoStudio Desktop Studio Interface" width="100%" style="border-radius: 14px; box-shadow: 0 20px 60px rgba(0,0,0,0.6);" />
+<img src="assets/studio_ui.png" alt="FondPeaceStudio Desktop Studio Interface" width="100%" style="border-radius: 14px; box-shadow: 0 20px 60px rgba(0,0,0,0.6);" />
 
 </div>
 
@@ -35,7 +35,7 @@
 
 ## 🎬 Live Generated Video Output
 
-Experience the actual video output generated 100% autonomously by **WebVideoStudio** — featuring frame-accurate 0.00s audio-visual synchronization, Google DeepMind neural narration, dynamic scrolling, and CapCut bouncy karaoke subtitles:
+Experience the actual video output generated 100% autonomously by **FondPeaceStudio** — featuring frame-accurate 0.00s audio-visual synchronization, Google DeepMind neural narration, dynamic scrolling, and CapCut bouncy karaoke subtitles:
 
 <div align="center">
 
@@ -52,7 +52,7 @@ Experience the actual video output generated 100% autonomously by **WebVideoStud
 
 ## 🌐 FondPeace Community & Creator Ecosystem
 
-**WebVideoStudio** is proudly developed under the **[FondPeace](https://fondpeace.com)** creative initiative — building autonomous AI pipelines and digital creator tools for modern developers and storytellers:
+**FondPeaceStudio** is proudly developed under the **[FondPeace](https://fondpeace.com)** creative initiative — building autonomous AI pipelines and digital creator tools for modern developers and storytellers:
 
 | Platform | Channel / URL | Purpose & Content |
 | :--- | :--- | :--- |
@@ -62,17 +62,17 @@ Experience the actual video output generated 100% autonomously by **WebVideoStud
 | 🧵 **Threads** | [@fondpeacecrazy](https://www.threads.net/@fondpeacecrazy) | Real-time discussions, open-source highlights & community updates |
 | 👥 **Facebook** | [FondPeace Reels](https://www.facebook.com/profile.php?id=61595100991996&sk=reels_tab) | Short-form developer reels and trending software highlights |
 | 🐦 **X (Twitter)** | [@fondpeacecrazy](https://x.com/fondpeacecrazy) | Breaking tech news, AI developments, and changelogs |
-| 💻 **GitHub** | [jastfan / WebVideoStudio](https://github.com/jastfan/WebVideoStudio) | Open-source codebase, bug reports, and community contributions |
+| 💻 **GitHub** | [jastfan / FondPeaceStudio](https://github.com/jastfan/FondPeaceStudio) | Open-source codebase, bug reports, and community contributions |
 
 ---
 
-## 💡 What is WebVideoStudio?
+## 💡 What is FondPeaceStudio?
 
-**WebVideoStudio** is an all-in-one, autonomous video production suite designed for tech content creators, developer advocates, founders, and social media managers. 
+**FondPeaceStudio** is an all-in-one, autonomous video production suite designed for tech content creators, developer advocates, founders, and social media managers. 
 
 It completely removes the tedious manual editing workflow — eliminating screen recording setups, manual voiceover recording, subtitle synchronization, cutaways, and video exporting. 
 
-With **WebVideoStudio**, you provide an input (a GitHub repo, a web URL, an AI announcement, or a custom prompt), and the engine autonomously:
+With **FondPeaceStudio**, you provide an input (a GitHub repo, a web URL, an AI announcement, or a custom prompt), and the engine autonomously:
 1. **Parses & Cleans** web content, markdown, images, badges, and documentation.
 2. **Generates High-Retention Viral Scripts** utilizing Gemini AI hooked to modern social retention frameworks.
 3. **Synthesizes Studio-Quality Narration** with Google DeepMind neural voices (*Puck, Fenrir, Zephyr, Kore, Charon*).
@@ -85,11 +85,11 @@ With **WebVideoStudio**, you provide an input (a GitHub repo, a web URL, an AI a
 
 ## 🚀 Beyond GitHub: Universal Content Production Engine
 
-While WebVideoStudio excels at transforming open-source GitHub repositories into viral videos, **it is engineered as a universal video engine for virtually ANY content**:
+While FondPeaceStudio excels at transforming open-source GitHub repositories into viral videos, **it is engineered as a universal video engine for virtually ANY content**:
 
 ```
                                ┌────────────────────────────────────────┐
-                               │       WebVideoStudio Input Modes       │
+                               │      FondPeaceStudio Input Modes       │
                                └──────────────────┬─────────────────────┘
                                                   │
          ┌──────────────────┬─────────────────────┼─────────────────────┬──────────────────┐
@@ -211,8 +211,8 @@ Ensure you have **Python 3.10+** installed. (FFmpeg is automatically handled via
 
 ### 2. Clone the Repository
 ```bash
-git clone https://github.com/jastfan/WebVideoStudio.git
-cd WebVideoStudio
+git clone https://github.com/jastfan/FondPeaceStudio.git
+cd FondPeaceStudio
 ```
 
 ### 3. Install Dependencies
@@ -223,7 +223,7 @@ playwright install chromium
 
 ---
 
-## 💻 Running WebVideoStudio
+## 💻 Running FondPeaceStudio
 
 ### Option A: Standalone Frameless Desktop App (Recommended)
 Launch the studio as an independent desktop application with zero browser address bars:
@@ -275,7 +275,7 @@ DEFAULT_BRAND_TEXT=@fondpeacecrazy
 ## 📂 Repository Directory Structure
 
 ```
-WebVideoStudio/
+FondPeaceStudio/
 ├── assets/                  # High-resolution UI screenshots, reel demos & branding
 │   ├── studio_ui.png        # Desktop studio interface preview (with loaded repos)
 │   ├── autoplay_reel_preview.gif # Auto-playing animated reel loop
@@ -307,7 +307,7 @@ WebVideoStudio/
 ## 🤝 Contributing
 
 Contributions, feature suggestions, and pull requests are warmly welcomed!
-1. Fork the Project (`https://github.com/jastfan/WebVideoStudio`)
+1. Fork the Project (`https://github.com/jastfan/FondPeaceStudio`)
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
