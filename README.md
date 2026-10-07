@@ -44,13 +44,7 @@ Experience the actual video output generated 100% autonomously by **WebVideoStud
 
 <br/>
 
-<a href="assets/sample_reel.mp4" title="Click to watch full video with audio">
-  <img src="assets/autoplay_reel_preview.gif" width="340" style="border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.6);" alt="Autonomous 9:16 Kinetic Reel Output" />
-</a>
-
-<br/><br/>
-
-[![Watch Full 1080x1920 Video with Sound](https://img.shields.io/badge/▶%EF%B8%8F_Watch_Full_1080x1920_MP4_Video_With_Audio-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](assets/sample_reel.mp4)
+<img src="assets/autoplay_reel_preview.gif" width="340" alt="Autonomous 9:16 Kinetic Reel Output" />
 
 <br/><br/>
 
@@ -302,7 +296,6 @@ WebVideoStudio/
 ├── assets/                  # High-resolution UI screenshots, reel demos & branding
 │   ├── studio_ui.png        # Desktop studio interface preview (with loaded repos)
 │   ├── autoplay_reel_preview.gif # Auto-playing animated reel loop
-│   ├── sample_reel.mp4      # Broadcast 1080x1920 sample video
 │   ├── reel_preview.jpg     # 9:16 mobile reel visual demo
 │   ├── capcut_captions.jpg  # CapCut kinetic captions showcase
 │   ├── cyan_reel.jpg        # Electric cyan cyberpunk style showcase
