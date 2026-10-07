@@ -1,30 +1,34 @@
 import asyncio
+import os
+import sys
 from playwright.async_api import async_playwright
 
-async def capture():
+async def capture(target_url: str = "https://fondpeace.com", out_path: str = "assets/fondpeace_ui.png"):
+    os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
-        context = await browser.new_context(viewport={"width": 1440, "height": 900}, device_scale_factor=2)
+        context = await browser.new_context(
+            viewport={"width": 1440, "height": 900},
+            device_scale_factor=2,
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        )
         page = await context.new_page()
         
-        print("Navigating to http://127.0.0.1:8000...")
-        await page.goto("http://127.0.0.1:8000", wait_until="networkidle")
+        print(f"Navigating to {target_url}...")
+        try:
+            await page.goto(target_url, wait_until="domcontentloaded", timeout=45000)
+            await page.wait_for_timeout(3000)
+        except Exception as e:
+            print(f"Navigation warning ({target_url}): {e}")
+
+        # Wait for fonts, layout, and animations to settle
+        await page.wait_for_timeout(2000)
         
-        await page.wait_for_selector(".repo-card", timeout=15000)
-        
-        # Wait for script generation to complete or up to 8 seconds
-        for _ in range(16):
-            await page.wait_for_timeout(500)
-            val = await page.input_value("#script-textarea")
-            if val and "Generating" not in val and len(val) > 20:
-                print("Script loaded:", val[:50])
-                break
-                
-        await page.wait_for_timeout(1000)
-        out_path = "assets/studio_ui.png"
-        await page.screenshot(path=out_path)
-        print(f"Screenshot successfully updated at {out_path}!")
+        await page.screenshot(path=out_path, full_page=False)
+        print(f"Screenshot successfully captured and saved to: {out_path}!")
         await browser.close()
 
 if __name__ == "__main__":
-    asyncio.run(capture())
+    target = sys.argv[1] if len(sys.argv) > 1 else "https://fondpeace.com"
+    destination = sys.argv[2] if len(sys.argv) > 2 else "assets/fondpeace_ui.png"
+    asyncio.run(capture(target, destination))
