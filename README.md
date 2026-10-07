@@ -46,23 +46,6 @@ Experience the actual video output generated 100% autonomously by **WebVideoStud
 
 <img src="assets/autoplay_reel_preview.gif" width="340" alt="Autonomous 9:16 Kinetic Reel Output" />
 
-<br/><br/>
-
-<table>
-  <tr>
-    <td align="center" width="50%">
-      <b>⚡ CapCut Neon Marker Preset</b><br/><br/>
-      <img src="assets/capcut_captions.jpg" width="300" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" alt="CapCut Neon Marker Captions" /><br/>
-      <i>Highlighter pill tag on spoken words, 3D mind-blown emoji & audio waveform tracking.</i>
-    </td>
-    <td align="center" width="50%">
-      <b>🌌 Electric Cyberpunk Theme</b><br/><br/>
-      <img src="assets/cyan_reel.jpg" width="300" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" alt="Electric Cyberpunk Style" /><br/>
-      <i>Cyan/Lime electric gradient, code block glow, and dynamic audio visualization.</i>
-    </td>
-  </tr>
-</table>
-
 </div>
 
 ---
@@ -296,6 +279,7 @@ WebVideoStudio/
 ├── assets/                  # High-resolution UI screenshots, reel demos & branding
 │   ├── studio_ui.png        # Desktop studio interface preview (with loaded repos)
 │   ├── autoplay_reel_preview.gif # Auto-playing animated reel loop
+│   ├── sample_reel.mp4      # 1080x1920 sample master reel
 │   ├── reel_preview.jpg     # 9:16 mobile reel visual demo
 │   ├── capcut_captions.jpg  # CapCut kinetic captions showcase
 │   ├── cyan_reel.jpg        # Electric cyan cyberpunk style showcase
