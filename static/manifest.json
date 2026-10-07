@@ -1,0 +1,25 @@
+{
+  "name": "FondPeace Studio — Viral GitTrend Reel Engine",
+  "short_name": "FondPeace",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070913",
+  "theme_color": "#070913",
+  "orientation": "any",
+  "description": "Produce viral 9:16 developer reels for trending GitHub repositories in one click with Google DeepMind studio TTS, Whisper karaoke sync, and high-retention social captions.",
+  "icons": [
+    {
+      "src": "/static/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/static/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["utilities", "productivity", "video"]
+}

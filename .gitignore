@@ -1,0 +1,48 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Output and temporary video rendering files
+temp/
+output/
+*.mp4
+*.webm
+*.mp3
+
+# Debug screenshots and inspection dumps
+debug_*.png
+cap_rel_*.png
+diff_*.png
+mask*.png
+scroll_time_*.jpg
+inspect_webm_*.jpg
+temp_ref_*.jpg
+temp_*.jpg
+temp_*.png
+top_view_*.png
+f28_*.png
+f29_*.png
+trending_fixed_check.png
+temp_frames_debug/
+reference_analysis/
+
+# Scratch & test scripts
+test_*.py
+verify_*.py
+transcribe_ref.py
+
+# App profile / browser cache
+.app_profile/
+*.log
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# OS metadata
+.DS_Store
+Thumbs.db

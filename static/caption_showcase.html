@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CapCut 2026 Viral Caption Showcase — FondPeace Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Plus+Jakarta+Sans:wght@700;800;900&family=JetBrains+Mono:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #090d16;
+      color: #f1f5f9;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+      max-width: 800px;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+    p.subtitle {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    /* Style Switcher Controls */
+    .style-nav {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 28px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 6px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .style-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .style-btn:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .style-btn.active {
+      background: #3b82f6;
+      color: #ffffff;
+      box-shadow: 0 4px 16px rgba(59, 130, 246, 0.4);
+    }
+
+    /* Main Showcase Container */
+    .showcase-stage {
+      width: 405px;
+      height: 720px;
+      background: #0d1117;
+      border-radius: 32px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Realistic GitHub Mockup in background */
+    .mock-browser {
+      margin: 18px 16px 0;
+      background: #161b22;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .mock-titlebar {
+      height: 32px;
+      background: #0d1117;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      gap: 6px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; }
+    .dot.r { background: #ff5f56; }
+    .dot.y { background: #ffbd2e; }
+    .dot.g { background: #27c93f; }
+    .mock-url {
+      margin-left: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      padding: 2px 10px;
+      font-size: 10px;
+      color: #8b949e;
+      flex: 1;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .mock-content {
+      padding: 16px;
+      color: #c9d1d9;
+      font-size: 11px;
+      line-height: 1.6;
+      flex: 1;
+      overflow: hidden;
+    }
+    .mock-badge-row {
+      display: flex;
+      gap: 6px;
+      margin: 8px 0;
+    }
+    .mock-badge {
+      background: #21262d;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 9px;
+      color: #58a6ff;
+      font-weight: 600;
+    }
+    .mock-code {
+      background: #0d1117;
+      border-radius: 8px;
+      padding: 10px;
+      margin-top: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: #79c0ff;
+      border: 1px solid #21262d;
+    }
+
+    /* CAPTION ZONE (Elevated Social Safe Zone) */
+    .caption-zone {
+      position: absolute;
+      bottom: 140px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 24px;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    /* ==============================================================
+       STYLE 1: CAPCUT NEON MARKER PILL TAG
+       ============================================================== */
+    .capcut-marker-box {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 26px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-align: center;
+      line-height: 1.25;
+      color: #ffffff;
+      -webkit-text-stroke: 3px #000000;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+    .marker-tag {
+      background: #bef264;
+      color: #000000 !important;
+      -webkit-text-stroke: 0px !important;
+      text-shadow: none !important;
+      padding: 3px 14px;
+      border-radius: 999px;
+      box-shadow: 0 0 24px rgba(190, 242, 100, 0.8), 0 4px 12px rgba(0, 0, 0, 0.6);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      animation: springPop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .marker-tag .emoji {
+      font-size: 24px;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+    }
+
+    /* ==============================================================
+       STYLE 2: CAPCUT CHUNKY 3D YELLOW POP
+       ============================================================== */
+    .capcut-yellow-box {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 28px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+      line-height: 1.2;
+      color: #ffffff;
+      -webkit-text-stroke: 4px #000000;
+      text-shadow: 
+        -2px -2px 0 #000,  
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000,
+         0 8px 18px rgba(0, 0, 0, 0.95);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+    .pop-yellow {
+      color: #ffe600 !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transform: scale(1.15);
+      animation: springPop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      text-shadow: 
+        -2px -2px 0 #000,  
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000,
+         0 0 20px rgba(255, 230, 0, 0.6);
+    }
+
+    /* ==============================================================
+       STYLE 3: CAPCUT ELECTRIC CYAN & LIME GRADIENT
+       ============================================================== */
+    .capcut-cyan-box {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 27px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      text-align: center;
+      line-height: 1.2;
+      color: #ffffff;
+      -webkit-text-stroke: 3.5px #000000;
+      text-shadow: 0 6px 16px rgba(0, 0, 0, 0.9);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+    .pop-cyan {
+      background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #00ff87 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.8);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transform: scale(1.14);
+      filter: drop-shadow(0 0 16px rgba(0, 242, 254, 0.8));
+      animation: springPop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes springPop {
+      0% { transform: scale(0.85); opacity: 0.6; }
+      70% { transform: scale(1.22); opacity: 1; }
+      100% { transform: scale(1.15); opacity: 1; }
+    }
+
+    /* ==============================================================
+       BOTTOM GLOWING PROGRESS BAR
+       ============================================================== */
+    .bottom-progress-track {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.08);
+      z-index: 9999;
+    }
+    .bottom-progress-fill {
+      height: 100%;
+      width: 65%;
+      border-radius: 0 3px 3px 0;
+      transition: width 0.3s ease;
+    }
+    .fill-lime {
+      background: linear-gradient(90deg, #38bdf8, #a3e635);
+      box-shadow: 0 0 12px #a3e635, 0 0 24px rgba(163, 230, 53, 0.6);
+    }
+    .fill-yellow {
+      background: linear-gradient(90deg, #ff9900, #ffe600);
+      box-shadow: 0 0 12px #ffe600, 0 0 24px rgba(255, 230, 0, 0.6);
+    }
+    .fill-cyan {
+      background: linear-gradient(90deg, #00f2fe, #4facfe);
+      box-shadow: 0 0 12px #00f2fe, 0 0 24px rgba(0, 242, 254, 0.6);
+    }
+
+    /* Info Card below */
+    .info-card {
+      margin-top: 24px;
+      max-width: 480px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 16px 20px;
+      text-align: center;
+    }
+    .info-title {
+      font-weight: 800;
+      font-size: 15px;
+      color: #f8fafc;
+      margin-bottom: 4px;
+    }
+    .info-desc {
+      font-size: 13px;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+    .select-btn {
+      margin-top: 14px;
+      background: #10b981;
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 13px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4);
+      transition: transform 0.2s;
+    }
+    .select-btn:hover {
+      transform: scale(1.04);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎬 CapCut 2026 Viral Caption Showcase</h1>
+    <p class="subtitle">Click the buttons below to switch and watch the live captions and bottom glowing progress bar in real time!</p>
+  </header>
+
+  <!-- Switcher Buttons -->
+  <div class="style-nav">
+    <button class="style-btn active" onclick="switchStyle(1)">
+      <span>🏷️</span> Style 1: Neon Marker Tag
+    </button>
+    <button class="style-btn" onclick="switchStyle(2)">
+      <span>🔥</span> Style 2: Chunky Yellow Pop
+    </button>
+    <button class="style-btn" onclick="switchStyle(3)">
+      <span>⚡</span> Style 3: Cyan Gradient Pop
+    </button>
+  </div>
+
+  <!-- 9:16 Vertical Video Frame Stage -->
+  <div class="showcase-stage">
+    
+    <!-- Realistic GitHub Browser Mockup -->
+    <div class="mock-browser">
+      <div class="mock-titlebar">
+        <span class="dot r"></span>
+        <span class="dot y"></span>
+        <span class="dot g"></span>
+        <div class="mock-url">github.com/DuarteSantos8/openGym</div>
+      </div>
+      <div class="mock-content">
+        <h2 style="font-size: 14px; font-weight: 800; color: #f0f6fc; margin-bottom: 4px;">openGym</h2>
+        <p style="font-size: 10px; color: #8b949e;">A self-hosted gym and body-weight tracker you actually own.</p>
+        <div class="mock-badge-row">
+          <span class="mock-badge">★ 2.4k stars today</span>
+          <span class="mock-badge">TypeScript</span>
+          <span class="mock-badge">MIT</span>
+        </div>
+        <div class="mock-code">
+          // Plan weekly workouts & track sets<br>
+          import { WorkoutTracker } from 'opengym';<br>
+          const gym = new WorkoutTracker();<br>
+          gym.syncPrivateDevice();
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Caption Container -->
+    <div class="caption-zone" id="caption-zone">
+      <!-- Populated dynamically via JS -->
+    </div>
+
+    <!-- Bottom Glowing Progress Bar -->
+    <div class="bottom-progress-track">
+      <div class="bottom-progress-fill fill-lime" id="progress-bar"></div>
+    </div>
+
+  </div> <!-- /.showcase-stage -->
+
+  <!-- Info Description Card -->
+  <div class="info-card">
+    <div class="info-title" id="info-title">Style 1: CapCut Neon Marker Pill Tag</div>
+    <div class="info-desc" id="info-desc">
+      Only the active spoken word is encased in a rounded neon lime highlighter pill badge with dark text, while other words remain bold white with black outline. Includes 3D Mind-Blown emoji and bottom glowing bar.
+    </div>
+  </div>
+
+  <script>
+    let currentStyle = 1;
+    let wordIndex = 0;
+
+    const phrases = [
+      { text: ["THIS", "REPO", "IS"], active: "CRAZY", emoji: "🤯" },
+      { text: ["NEW", "OPEN", "SOURCE"], active: "BREAKOUT", emoji: "⚡" },
+      { text: ["TRACK", "ALL", "YOUR"], active: "WORKOUTS", emoji: "💪" },
+      { text: ["BUILD", "APPS", "TEN-X"], active: "FASTER", emoji: "🚀" }
+    ];
+
+    function renderCaption() {
+      const cz = document.getElementById('caption-zone');
+      const pb = document.getElementById('progress-bar');
+      const p = phrases[wordIndex % phrases.length];
+
+      if (currentStyle === 1) {
+        cz.innerHTML = `
+          <div class="capcut-marker-box">
+            <span>${p.text.join(' ')}</span>
+            <span class="marker-tag">
+              <span>${p.active}</span>
+              <span class="emoji">${p.emoji}</span>
+            </span>
+          </div>
+        `;
+        pb.className = 'bottom-progress-fill fill-lime';
+      } else if (currentStyle === 2) {
+        cz.innerHTML = `
+          <div class="capcut-yellow-box">
+            <span>${p.text.join(' ')}</span>
+            <span class="pop-yellow">
+              <span>${p.active}</span>
+              <span style="font-size: 26px;">🔥</span>
+            </span>
+          </div>
+        `;
+        pb.className = 'bottom-progress-fill fill-yellow';
+      } else if (currentStyle === 3) {
+        cz.innerHTML = `
+          <div class="capcut-cyan-box">
+            <span>${p.text.join(' ')}</span>
+            <span class="pop-cyan">
+              <span>${p.active}</span>
+              <span style="font-size: 26px;">🚀</span>
+            </span>
+          </div>
+        `;
+        pb.className = 'bottom-progress-fill fill-cyan';
+      }
+
+      // Simulate audio progress loop
+      const pct = 30 + ((wordIndex % 5) * 15);
+      pb.style.width = pct + '%';
+    }
+
+    function switchStyle(styleNum) {
+      currentStyle = styleNum;
+      document.querySelectorAll('.style-btn').forEach((b, i) => {
+        b.classList.toggle('active', i + 1 === styleNum);
+      });
+
+      const title = document.getElementById('info-title');
+      const desc = document.getElementById('info-desc');
+
+      if (styleNum === 1) {
+        title.innerText = "Style 1: CapCut Neon Marker Pill Tag";
+        desc.innerText = "Only the active spoken word is encased in a rounded neon lime highlighter pill badge with dark text. Most viral TikTok preset.";
+      } else if (styleNum === 2) {
+        title.innerText = "Style 2: CapCut Chunky 3D Yellow Pop & Fire";
+        desc.innerText = "Zero background box! Bold chunky white text with thick 3D shadow. Spoken word bursts into electric yellow with elastic spring scale bounce and Fire emoji.";
+      } else if (styleNum === 3) {
+        title.innerText = "Style 3: CapCut Electric Cyan/Lime Gradient";
+        desc.innerText = "Spoken word glows in Electric Cyan to Neon Lime gradient bloom with 3D Rocket emoji and cyan laser bottom bar.";
+      }
+
+      renderCaption();
+    }
+
+    // Auto animate through words
+    setInterval(() => {
+      wordIndex++;
+      renderCaption();
+    }, 1800);
+
+    renderCaption();
+  </script>
+</body>
+</html>

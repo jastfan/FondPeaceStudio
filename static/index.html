@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>FondPeace Studio — Viral GitTrend Reel Engine</title>
+  
+  <!-- PWA & Native App Meta Tags -->
+  <link rel="manifest" href="/static/manifest.json">
+  <meta name="theme-color" content="#070913">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="/static/icon-192.png">
+  <link rel="icon" type="image/png" href="/static/icon-192.png">
+
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="brand-container">
+      <div class="brand-logo">🚀</div>
+      <div>
+        <span class="brand-title">FondPeace Studio</span>
+        <span class="brand-tag">Native App</span>
+      </div>
+    </div>
+    <div class="header-status">
+      <div class="status-badge" id="api-status-pill">
+        <span class="pulse-dot"></span>
+        <span id="api-status-text">DeepMind TTS Ready</span>
+      </div>
+      <button id="btn-install-pwa" class="btn-install-app" title="Install as standalone desktop/mobile app" style="display: none;">
+        <span>📲</span>
+        <span>Install App</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Studio Layout -->
+  <div class="studio-layout">
+
+    <!-- Left Panel: Trending Hub -->
+    <section class="panel" id="panel-trending">
+      <div class="panel-header">
+        <span class="panel-title">🔥 GitHub Trending Hub</span>
+        <button id="btn-refresh-trending" class="btn-secondary" title="Fetch fresh daily trending repos">🔄 Refresh</button>
+      </div>
+
+      <div class="search-box">
+        <input type="text" id="custom-repo-input" class="input-styled" placeholder="Paste GitHub URL (e.g. https://github.com/...)">
+        <button id="btn-load-custom" class="btn-primary">✨ Import</button>
+      </div>
+
+      <div id="trending-list-container" class="trending-list">
+        <!-- Loaded dynamically via app.js -->
+        <div style="text-align:center; padding: 40px; color: var(--text-muted); font-size: 13px;">
+          Scanning today's breakout repositories...
+        </div>
+      </div>
+    </section>
+
+    <!-- Center Panel: 9:16 Canvas Studio Preview with Draggable Watermark -->
+    <section class="panel preview-panel" id="panel-preview">
+      <div class="panel-header" style="width: 100%;">
+        <span class="panel-title">📱 9:16 Reel Live Canvas</span>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <button id="btn-toggle-center-video" class="btn-secondary" style="display: none; padding: 3px 8px; font-size: 11px; color: var(--accent-green); border-color: rgba(16, 185, 129, 0.4);">▶️ Watch Video</button>
+          <span style="font-size: 11px; color: var(--text-muted);" id="badge-drag-hint">Drag badge anywhere</span>
+        </div>
+      </div>
+
+      <!-- 360x640 scaled preview of 720x1280 stage -->
+      <div id="canvas-stage" class="canvas-wrapper">
+        <!-- Live Center Video Player (Fills full 360x640 phone canvas with zero shrinking) -->
+        <video id="center-video-player" class="center-video-canvas" controls autoplay loop playsinline style="display: none; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #000; border-radius: 20px; z-index: 900;"></video>
+        <div class="mockup-inner">
+          <div class="mock-titlebar">
+            <div style="display:flex; gap:4px;">
+              <span style="width:6px; height:6px; border-radius:50%; background:#ff5f56; display:inline-block;"></span>
+              <span style="width:6px; height:6px; border-radius:50%; background:#ffbd2e; display:inline-block;"></span>
+              <span style="width:6px; height:6px; border-radius:50%; background:#27c93f; display:inline-block;"></span>
+            </div>
+            <div class="mock-tab" id="preview-tab-name">GitHub - DietrichGebert/ponytail</div>
+          </div>
+          <div class="mock-addressbar">
+            <div class="mock-url" id="preview-address-url">github.com/DietrichGebert/ponytail#readme</div>
+          </div>
+          <div class="mock-subtabs">
+            <span style="color:#fff; font-weight:700; border-bottom:1.5px solid #f78166;">README</span>
+            <span>Contributing</span>
+            <span>License</span>
+          </div>
+          <div class="mock-content" id="preview-mock-content">
+            <h1 id="preview-repo-title">Ponytail</h1>
+            <p id="preview-repo-tagline" style="text-align:center; color:#58a6ff; font-weight:600;">The lazy senior dev inside your AI agent.</p>
+            <div style="display:flex; gap:4px; justify-content:center; margin:8px 0;">
+              <span id="preview-stars-badge" style="background:#238636; color:#fff; padding:2px 6px; border-radius:4px; font-size:8px;">★ 154,484</span>
+              <span id="preview-today-badge" style="background:#1f6feb; color:#fff; padding:2px 6px; border-radius:4px; font-size:8px;">+1,894 today</span>
+              <span id="preview-lang-badge" style="background:#30363d; color:#fff; padding:2px 6px; border-radius:4px; font-size:8px;">JavaScript</span>
+            </div>
+            <p id="preview-repo-desc">Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.</p>
+            <div id="preview-cmd-badge" style="background:#161b22; padding:6px; border-radius:6px; border:1px solid #30363d; font-family:monospace; margin-top:8px;">
+              $ git clone https://github.com/DietrichGebert/ponytail.git
+            </div>
+          </div>
+        </div>
+
+        <!-- Hormozi Subtitles Preview -->
+        <div class="mock-captions">
+          <div class="mock-caption-box">
+            YOUR <span style="color: #ffe600;">AI AGENT</span>
+          </div>
+        </div>
+
+        <!-- INTERACTIVE DRAGGABLE BRANDING ELEMENT -->
+        <div id="draggable-branding" style="left: 235px; top: 590px;">
+          <div class="branding-pill" id="preview-brand-element">
+            <span class="branding-dot"></span>
+            <span id="preview-brand-text">@FondPeace</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="branding-pos-readout" id="pos-readout">
+        📍 Branding Position: X: 490px | Y: 1210px (Scale: 720x1280)
+      </div>
+    </section>
+
+    <!-- Right Panel: Voice, Branding, Script & Production Engine -->
+    <section class="panel studio-controls" id="panel-studio">
+      <div class="panel-header">
+        <span class="panel-title">⚙️ Production Settings & AI Script</span>
+      </div>
+
+      <!-- Selected Repository Full Details Card -->
+      <div id="selected-repo-card" class="selected-repo-card">
+        <div class="selected-repo-header">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span id="selected-repo-rank" class="repo-rank-pill">#1 Trending</span>
+            <span id="selected-repo-lang" class="repo-lang-pill">💻 JavaScript</span>
+          </div>
+          <a id="selected-repo-link" href="https://github.com/DietrichGebert/ponytail" target="_blank" rel="noopener noreferrer" class="repo-gh-link">
+            🔗 Open GitHub ↗
+          </a>
+        </div>
+        <h3 id="selected-repo-name" class="selected-repo-title">DietrichGebert/ponytail</h3>
+        <p id="selected-repo-desc" class="selected-repo-description">
+          Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.
+        </p>
+        <div class="selected-repo-stats">
+          <div class="stat-chip">
+            <span class="stat-label">Momentum</span>
+            <span id="selected-repo-today" class="stat-val highlight-green">📈 +1,894 today</span>
+          </div>
+          <div class="stat-chip">
+            <span class="stat-label">Total Stars</span>
+            <span id="selected-repo-stars" class="stat-val highlight-yellow">★ 155,136</span>
+          </div>
+          <div class="stat-chip">
+            <span class="stat-label">Quickstart</span>
+            <button id="btn-copy-clone-cmd" class="btn-copy-chip" title="Copy clone command">📋 Copy Clone</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Voice & Emotion -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+        <div class="control-group">
+          <label class="control-label">🎙️ DeepMind Studio Voice</label>
+          <select id="select-voice" class="select-styled">
+            <option value="Puck" selected>🎙️ Puck (Energetic Storyteller / Host)</option>
+            <option value="Fenrir">🔥 Fenrir (Bold & Intense Tech)</option>
+            <option value="Zephyr">⚡ Zephyr (Gen-Z Fast-Paced Viral)</option>
+            <option value="Kore">🌸 Kore (Calm Explainer)</option>
+            <option value="Charon">🎬 Charon (Deep Cinematic Authority)</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">🎭 Emotion & Cadence</label>
+          <select id="select-emotion" class="select-styled">
+            <option value="high-energy viral storytelling" selected>⚡ High-Energy Viral Hook</option>
+            <option value="bold breakthrough authority">🔥 Bold Tech Breakthrough</option>
+            <option value="conversational podcast">🎙️ Conversational Storyteller</option>
+            <option value="fast-paced modern">🚀 Fast-Paced Punchy</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Scroll Speed Slider -->
+      <div class="control-group">
+        <div style="display: flex; justify-content: space-between;">
+          <label class="control-label">📜 Reading Scroll Velocity</label>
+          <span class="slider-val" id="scroll-val">28 px/s (Calm GitTrend)</span>
+        </div>
+        <div class="slider-container">
+          <input type="range" id="scroll-slider" class="slider-styled" min="15" max="60" value="28" step="1">
+        </div>
+      </div>
+
+      <!-- Draggable Branding Settings -->
+      <div class="control-group" style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <label class="control-label">✨ Custom Branding (Draggable)</label>
+          <label style="font-size: 11px; display: flex; align-items: center; gap: 4px; cursor: pointer;">
+            <input type="checkbox" id="brand-enabled-check" checked> Enable Branding
+          </label>
+        </div>
+
+        <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+          <input type="text" id="brand-text-input" class="input-styled" value="@FondPeace" placeholder="Channel / Brand Text">
+          <label class="btn-secondary" style="display: flex; align-items: center; gap: 4px; cursor: pointer;">
+            🖼️ Logo
+            <input type="file" id="logo-file-input" accept="image/*" style="display:none;">
+          </label>
+        </div>
+      </div>
+
+      <!-- AI Spoken Script -->
+      <div class="control-group">
+        <div style="display:flex; justify-content: space-between; align-items:center;">
+          <label class="control-label">📝 Voiceover Script (Spoken)</label>
+          <span style="font-size: 11px; color: var(--text-muted);" id="script-word-count">~70 words</span>
+        </div>
+        <textarea id="script-textarea" class="textarea-styled" rows="3" placeholder="Click any trending repo to generate script..."></textarea>
+      </div>
+
+      <!-- Full Instagram Caption -->
+      <div class="control-group">
+        <div style="display:flex; justify-content: space-between; align-items:center;">
+          <label class="control-label">📄 Post Caption & 25+ Hashtags</label>
+          <button id="btn-copy-caption" class="btn-secondary" style="padding: 4px 8px; font-size: 11px;">📋 Copy Caption</button>
+        </div>
+        <textarea id="caption-textarea" class="textarea-styled" rows="4" placeholder="Full caption with bullets and viral hashtags..."></textarea>
+      </div>
+
+      <!-- Render Action & Progress -->
+      <button id="btn-render-reel" class="btn-cta">
+        <span>🚀 Render Viral Reel (9:16 MP4)</span>
+      </button>
+
+      <!-- Live Progress Bar -->
+      <div id="render-progress-card" class="render-card" style="display: none;">
+        <div class="progress-header">
+          <span id="progress-step-text">Rendering Reel...</span>
+          <span id="progress-pct-text">0%</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div id="progress-bar-fill" class="progress-bar-fill"></div>
+        </div>
+        <div class="progress-status-msg">
+          <span class="pulse-dot"></span>
+          <span id="progress-detail-text">Preparing assets and Chromium pipeline...</span>
+        </div>
+      </div>
+
+      <!-- Generated Video Output -->
+      <div id="video-output-box" class="video-preview-box" style="display: none;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-weight:700; font-size:13px; color:var(--accent-green);">🎉 Viral Reel Generated!</span>
+          <a id="btn-download-video" href="#" download class="btn-primary" style="padding:6px 12px; font-size:12px;">⬇️ Download MP4</a>
+        </div>
+        <video id="final-video-player" class="video-player" controls autoplay loop playsinline></video>
+      </div>
+
+      <!-- Recent Rendered Reels Gallery -->
+      <div id="recent-videos-section" style="margin-top: 18px; border-top: 1px solid var(--border-color); padding-top: 14px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <span style="font-weight:700; font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px;">📁 Recent Exported Reels</span>
+          <button id="btn-refresh-videos" class="btn-secondary" style="padding:3px 8px; font-size:11px;">🔄 Refresh</button>
+        </div>
+        <div id="recent-videos-list" style="display:flex; flex-direction:column; gap:6px; max-height:150px; overflow-y:auto;">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- Mobile Bottom App Navigation Bar (Active on Mobile & Small Tablets) -->
+  <nav class="mobile-bottom-nav" id="mobile-nav">
+    <button class="nav-tab active" data-target="panel-trending">
+      <span class="nav-icon">🔥</span>
+      <span class="nav-label">Trending</span>
+    </button>
+    <button class="nav-tab" data-target="panel-preview">
+      <span class="nav-icon">📱</span>
+      <span class="nav-label">Preview</span>
+    </button>
+    <button class="nav-tab" data-target="panel-studio">
+      <span class="nav-icon">⚙️</span>
+      <span class="nav-label">Studio</span>
+    </button>
+    <button class="nav-tab" data-target="recent-videos-section">
+      <span class="nav-icon">📁</span>
+      <span class="nav-label">Library</span>
+    </button>
+  </nav>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
