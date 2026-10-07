@@ -38,22 +38,37 @@
 Experience the actual video output generated 100% autonomously by **WebVideoStudio** — featuring frame-accurate 0.00s audio-visual synchronization, Google DeepMind neural narration, dynamic scrolling, and CapCut bouncy karaoke subtitles:
 
 <div align="center">
+
+### ⚡ 9:16 Autonomous Reel Output (Live Kinetic Preview)
+*Continuous loop preview showcasing word-level karaoke sync, active scrolling & CapCut typography:*
+
+<br/>
+
+<a href="assets/sample_reel.mp4" title="Click to watch full video with audio">
+  <img src="assets/autoplay_reel_preview.gif" width="340" style="border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.6);" alt="Autonomous 9:16 Kinetic Reel Output" />
+</a>
+
+<br/><br/>
+
+[![Watch Full 1080x1920 Video with Sound](https://img.shields.io/badge/▶%EF%B8%8F_Watch_Full_1080x1920_MP4_Video_With_Audio-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](assets/sample_reel.mp4)
+
+<br/><br/>
+
 <table>
   <tr>
     <td align="center" width="50%">
-      <b>⚡ Auto-Playing Live Reel Demo (Animated Preview)</b><br/><br/>
-      <img src="assets/autoplay_reel_preview.gif" width="320" style="border-radius: 14px; box-shadow: 0 15px 40px rgba(0,0,0,0.6);" alt="Autonomous 9:16 Kinetic Reel Output" /><br/><br/>
-      <a href="assets/sample_reel.mp4"><b>🔊 Click here to watch / listen to the full 1080x1920 MP4 (with DeepMind Voiceover & Sound)</b></a><br/>
-      <i>(Continuous auto-playing loop showing kinetic karaoke words & active documentation scrolling)</i>
+      <b>⚡ CapCut Neon Marker Preset</b><br/><br/>
+      <img src="assets/capcut_captions.jpg" width="300" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" alt="CapCut Neon Marker Captions" /><br/>
+      <i>Highlighter pill tag on spoken words, 3D mind-blown emoji & audio waveform tracking.</i>
     </td>
     <td align="center" width="50%">
-      <b>✨ CapCut Neon Marker & Kinetic Captions</b><br/><br/>
-      <img src="assets/capcut_captions.jpg" width="320" style="border-radius: 14px; box-shadow: 0 15px 40px rgba(0,0,0,0.6);" alt="CapCut Neon Marker Captions" /><br/><br/>
-      <a href="assets/cyan_reel.jpg"><b>🌌 View Electric Cyberpunk Reel Theme</b></a><br/>
-      <i>(Highlighter pill tag on spoken words, 3D mind-blown emoji & audio waveform tracking)</i>
+      <b>🌌 Electric Cyberpunk Theme</b><br/><br/>
+      <img src="assets/cyan_reel.jpg" width="300" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" alt="Electric Cyberpunk Style" /><br/>
+      <i>Cyan/Lime electric gradient, code block glow, and dynamic audio visualization.</i>
     </td>
   </tr>
 </table>
+
 </div>
 
 ---
