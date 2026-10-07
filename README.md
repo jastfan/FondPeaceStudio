@@ -41,14 +41,14 @@ Experience the actual video output generated 100% autonomously by **WebVideoStud
 <table>
   <tr>
     <td align="center" width="50%">
-      <b>⚡ Live 9:16 Autonomous Reel Output (Preview)</b><br/><br/>
-      <img src="assets/reel_demo.gif" width="300" style="border-radius: 14px; box-shadow: 0 15px 40px rgba(0,0,0,0.6);" alt="Live Autonomous Reel Output Preview" /><br/><br/>
-      <a href="assets/sample_reel.mp4"><b>▶️ Click here to watch / download the full 1080x1920 MP4 Video</b></a><br/>
-      <i>(Clean 60fps audio-video lockstep, DeepMind voiceover & word-level karaoke sync)</i>
+      <b>⚡ Auto-Playing Live Reel Demo (Animated Preview)</b><br/><br/>
+      <img src="assets/reel_demo.gif" width="320" style="border-radius: 14px; box-shadow: 0 15px 40px rgba(0,0,0,0.6);" alt="Autonomous 9:16 Kinetic Reel Output" /><br/><br/>
+      <a href="assets/sample_reel.mp4"><b>🔊 Click here to watch / listen to the full 1080x1920 MP4 (with DeepMind Voiceover & Sound)</b></a><br/>
+      <i>(Continuous auto-playing loop showing kinetic karaoke words & active documentation scrolling)</i>
     </td>
     <td align="center" width="50%">
       <b>✨ CapCut Neon Marker & Kinetic Captions</b><br/><br/>
-      <img src="assets/capcut_captions.jpg" width="300" style="border-radius: 14px; box-shadow: 0 15px 40px rgba(0,0,0,0.6);" alt="CapCut Neon Marker Captions" /><br/><br/>
+      <img src="assets/capcut_captions.jpg" width="320" style="border-radius: 14px; box-shadow: 0 15px 40px rgba(0,0,0,0.6);" alt="CapCut Neon Marker Captions" /><br/><br/>
       <a href="assets/cyan_reel.jpg"><b>🌌 View Electric Cyberpunk Reel Theme</b></a><br/>
       <i>(Highlighter pill tag on spoken words, 3D mind-blown emoji & audio waveform tracking)</i>
     </td>

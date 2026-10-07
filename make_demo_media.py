@@ -22,10 +22,11 @@ gif_out = "assets/reel_demo.gif"
 cmd = [
     ffmpeg_exe,
     "-y",
-    "-ss", "0",
-    "-t", "8",
+    "-ss", "2.5",
+    "-t", "7",
     "-i", src_mp4,
-    "-vf", "fps=12,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse",
+    "-vf", "fps=14,scale=360:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse",
+    "-loop", "0",
     gif_out
 ]
 
