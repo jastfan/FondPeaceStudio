@@ -1,7 +1,7 @@
 <div align="center">
 
 # 🚀 WebVideoStudio
-### *Autonomous Viral GitTrend Reel Engine & Creative Production Suite*
+### *Autonomous Multi-Platform 9:16 Viral Reel Engine & Universal Web Video Suite*
 
 [![GitHub Stars](https://img.shields.io/github/stars/jastfan/WebVideoStudio?style=for-the-badge&logo=github&color=5865F2)](https://github.com/jastfan/WebVideoStudio/stargazers)
 [![Python Version](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
@@ -12,7 +12,16 @@
 
 <br/>
 
-**Transform trending open-source GitHub repositories into viral, studio-grade 9:16 short-form reels for Instagram, TikTok, YouTube Shorts, and Threads in one click.**
+<!-- Social Community Badges -->
+[![YouTube](https://img.shields.io/badge/YouTube-FondPeace-FF0000?style=flat-square&logo=youtube&logoColor=white)](https://www.youtube.com/channel/UCXUG7LfzEiIgv3Rvf5r01SQ)
+[![Instagram](https://img.shields.io/badge/Instagram-@fondpeacecrazy-E4405F?style=flat-square&logo=instagram&logoColor=white)](https://www.instagram.com/fondpeacecrazy)
+[![Threads](https://img.shields.io/badge/Threads-@fondpeacecrazy-000000?style=flat-square&logo=threads&logoColor=white)](https://www.threads.net/@fondpeacecrazy)
+[![Facebook](https://img.shields.io/badge/Facebook_Reels-FondPeace-1877F2?style=flat-square&logo=facebook&logoColor=white)](https://www.facebook.com/profile.php?id=61595100991996&sk=reels_tab)
+[![X / Twitter](https://img.shields.io/badge/X_Twitter-@fondpeacecrazy-000000?style=flat-square&logo=x&logoColor=white)](https://x.com/fondpeacecrazy)
+
+<br/>
+
+**Transform trending GitHub repositories, web articles, documentation, SaaS landing pages, and custom scripts into viral, broadcast-grade 9:16 short-form video reels in one click.**
 
 <br/>
 
@@ -22,28 +31,86 @@
 
 ---
 
-## 💡 What is WebVideoStudio?
+## 🌐 Connect With Us & Community
 
-**WebVideoStudio** is a zero-manual-editing, autonomous video generation platform designed for tech creators, developer advocates, and open-source communities.
+Join our creator community and watch daily reels generated 100% autonomously by **WebVideoStudio**:
 
-It monitors trending breakout GitHub repositories daily, parses documentation and visual assets, synthesizes high-energy neural narration using **Google DeepMind Studio Voices**, performs word-level karaoke subtitle alignment with **OpenAI Whisper AI**, records the repository stage inside a 9:16 mobile canvas using **Playwright**, and produces broadcast-standard **1080x1920 MP4 reels** with zero white frames, frame-accurate synchronization, and ready-to-post social captions.
+| Platform | Channel / Profile | Description |
+| :--- | :--- | :--- |
+| 📺 **YouTube** | [FondPeace Official Channel](https://www.youtube.com/channel/UCXUG7LfzEiIgv3Rvf5r01SQ) | Watch high-retention tech breakdowns, Shorts, and AI guides |
+| 📸 **Instagram** | [@fondpeacecrazy](https://www.instagram.com/fondpeacecrazy) | Daily viral reels, creator drops, and developer showcases |
+| 🧵 **Threads** | [@fondpeacecrazy](https://www.threads.net/@fondpeacecrazy) | Real-time discussions, open-source highlights & updates |
+| 👥 **Facebook** | [FondPeace Reels](https://www.facebook.com/profile.php?id=61595100991996&sk=reels_tab) | Short-form developer reels and trending software highlights |
+| 🐦 **X (Twitter)** | [@fondpeacecrazy](https://x.com/fondpeacecrazy) | Breaking tech news, AI developments, and changelogs |
+| 💻 **GitHub** | [jastfan / WebVideoStudio](https://github.com/jastfan/WebVideoStudio) | Source code, feature requests, and open-source contributions |
 
 ---
 
-## 📱 Visual Reel Output & CapCut Captions
+## 💡 What is WebVideoStudio?
+
+**WebVideoStudio** is an all-in-one, autonomous video production suite designed for tech content creators, developer advocates, founders, and social media managers. 
+
+It completely removes the tedious manual editing workflow — eliminating screen recording setups, manual voiceover recording, subtitle synchronization, cutaways, and video exporting. 
+
+With **WebVideoStudio**, you provide an input (a GitHub repo, a web URL, an AI announcement, or a custom prompt), and the engine autonomously:
+1. **Parses & Cleans** web content, markdown, images, badges, and documentation.
+2. **Generates High-Retention Viral Scripts** utilizing Gemini AI hooked to modern social retention frameworks.
+3. **Synthesizes Studio-Quality Narration** with Google DeepMind neural voices (*Puck, Fenrir, Zephyr, Kore, Charon*).
+4. **Performs Word-Level Karaoke Subtitle Alignment** using OpenAI Whisper AI.
+5. **Records a Pixel-Perfect 9:16 Mobile Canvas** inside an automated Playwright headless/headed browser stage.
+6. **Eliminates Dead Frames & White Flashes** using computer-vision OpenCV neon-green frame sync for lockstep 0.00s audio-visual synchronization.
+7. **Produces Broadcast-Ready 1080x1920 MP4 Reels** accompanied by ready-to-publish captions with emojis and 25+ viral hashtags.
+
+---
+
+## 🚀 Beyond GitHub: Universal Content Production Engine
+
+While WebVideoStudio excels at transforming open-source GitHub repositories into viral videos, **it is engineered as a universal video engine for virtually ANY content**:
+
+```
+                               ┌────────────────────────────────────────┐
+                               │       WebVideoStudio Input Modes       │
+                               └──────────────────┬─────────────────────┘
+                                                  │
+         ┌──────────────────┬─────────────────────┼─────────────────────┬──────────────────┐
+         │                  │                     │                     │                  │
+         ▼                  ▼                     ▼                     ▼                  ▼
+┌──────────────────┐┌──────────────────┐┌───────────────────┐┌──────────────────┐┌──────────────────┐
+│ 🐙 GitHub Repos  ││  🌐 Web URLs &   ││  🤖 AI & Tech     ││ 🚀 Product Hunt  ││ ✍️ Custom Script │
+│  Trending repos, ││   Blog Articles  ││   News Digests    ││   & SaaS Demos   ││  & Prompt-to-    │
+│  READMEs, tags,  ││  Medium, Dev.to, ││ Research papers,  ││ Feature tours,   ││  Video storytelling│
+│  releases & code ││ docs & portals   ││ HuggingFace drops ││ landing pages    ││ with sound fx   │
+└──────────────────┘└──────────────────┘└───────────────────┘└──────────────────┘└──────────────────┘
+```
+
+1. **🐙 GitHub Breakouts & Repositories**: Real-time scraper pulls star counts, languages, and formatted documentation into a punchy showcase.
+2. **🌐 Any Web Article or Documentation (URL-to-Video)**: Convert documentation portals, Medium posts, Substack newsletters, and tech blogs into dynamic scrolling video walkthroughs.
+3. **🤖 AI & Tech News Highlights**: Summarize groundbreaking papers, HuggingFace releases, and tech breakthroughs in punchy 45-60 second reels.
+4. **🚀 Product Launches & SaaS Demos**: Turn landing pages and Product Hunt launches into engaging product promo reels with animated subtitles and voiceover.
+5. **✍️ Custom Script & Prompt Mode**: Paste your own custom script or topic prompt for complete creative freedom with automated kinetic captions and audio sync.
+6. **📱 Multi-Platform Optimization**: Outputs 1080x1920 vertical video natively calibrated for **YouTube Shorts**, **Instagram Reels**, **TikTok**, **Threads**, **Facebook Reels**, and **X / Twitter**.
+
+---
+
+## 📱 Visual Reel Output & CapCut Caption Gallery
 
 <div align="center">
 <table>
   <tr>
-    <td align="center" width="50%">
-      <b>🎬 Viral 9:16 Mobile Reel Output</b><br/><br/>
-      <img src="assets/reel_preview.jpg" width="300" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" alt="9:16 Viral Reel Preview" /><br/>
+    <td align="center" width="33%">
+      <b>🎬 Viral 9:16 Mobile Reel</b><br/><br/>
+      <img src="assets/reel_preview.jpg" width="260" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" alt="9:16 Viral Reel Preview" /><br/>
       <i>Chunky 3D kinetic typography, active yellow bounce, fire emoji & bottom glowing progress bar.</i>
     </td>
-    <td align="center" width="50%">
-      <b>⚡ CapCut Neon Marker Preset</b><br/><br/>
-      <img src="assets/capcut_captions.jpg" width="300" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" alt="CapCut Neon Marker Caption" /><br/>
+    <td align="center" width="33%">
+      <b>⚡ CapCut Neon Marker</b><br/><br/>
+      <img src="assets/capcut_captions.jpg" width="260" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" alt="CapCut Neon Marker Caption" /><br/>
       <i>Highlighter pill tag on spoken words, 3D mind-blown emoji & audio waveform tracking.</i>
+    </td>
+    <td align="center" width="33%">
+      <b>🌌 Electric Cyan Cyberpunk</b><br/><br/>
+      <img src="assets/cyan_reel.jpg" width="260" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" alt="Electric Cyan Style" /><br/>
+      <i>Cyan/Lime electric gradient, code block glow, and dynamic audio visualization.</i>
     </td>
   </tr>
 </table>
@@ -51,32 +118,68 @@ It monitors trending breakout GitHub repositories daily, parses documentation an
 
 ---
 
-## ✨ Key Features & Capabilities
+## ✨ Key Features & Technical Innovation
 
-* **🔥 Automated Trend Discovery**: Real-time scanning of today's breakout repositories from `jastfan/github-trending` with daily star gain metrics and language pills.
-* **🎙️ Google DeepMind Studio TTS**: High-cadence studio voices (**Puck**, **Fenrir**, **Zephyr**, **Kore**, **Charon**) with automatic multi-key quota failover.
-* **🎯 Frame-Accurate Zero-Delay Sync Engine**: Precision calibration with OpenCV neon-green trigger marker (`[0, 255, 0]`) eliminates leading dead/white frames (`about:blank`), ensuring audio and video start at exact **0.00s lockstep**.
-* **💬 CapCut / Hormozi Kinetic Karaoke Subtitles**: Word-level active highlighting with `hl-yellow`, spring bounce animations, matching 3D emojis (🔥, 🚀, ⚡, 🤯), and clean plain-text fallback during speech micro-pauses.
-* **📜 Asset Normalization & Asset Guard**: Automatic conversion of relative markdown image links to raw GitHub CDN URLs (`raw.githubusercontent.com/.../HEAD/...`), with `md_in_html` support for centered banners, shields.io badges, and Discord buttons.
-* **🖥️ Universal Cross-Device App**: Responsive across **Desktop**, **Tablet**, and **Mobile** with PWA support and a dedicated frameless desktop app launcher (`FondPeaceStudio.bat` / `launch_app.py`) that runs without browser address bars or URL tabs.
-* **📄 Platform-Ready Social Captions**: Automatically generates clean plain-text captions with emojis and 25+ viral developer hashtags ready to paste directly on Instagram, YouTube Shorts, Threads, and Facebook Reels.
+* **🔥 Autonomous Breakout Discovery**: Real-time integration with `jastfan/github-trending` identifying breakout repositories with star velocity metrics.
+* **🎙️ Google DeepMind Studio Neural TTS**: Expressive voices (**Puck**, **Fenrir**, **Zephyr**, **Kore**, **Charon**) with automatic multi-key quota failover pool.
+* **🎯 Frame-Accurate Zero-Delay Sync Engine**: 
+  - Injects a computer-vision neon-green sync trigger (`[0, 255, 0]`) into the stage.
+  - OpenCV inspects video frames and precisely strips away `about:blank` and browser initialization dead time.
+  - Audio narration and video scroll start at **exact 0.00s lockstep synchronization**.
+* **💬 CapCut / Hormozi Kinetic Karaoke Subtitles**:
+  - Word-level active word highlight with spring bounce animations.
+  - Contextual 3D emojis (🔥, 🚀, ⚡, 🤯, 💡, 💻) dynamically triggered by spoken keywords.
+  - Plain-text subtitle fallback during speech micro-pauses for clean presentation.
+* **📜 Asset Normalization & Asset Guard**:
+  - Converts relative GitHub markdown links into absolute raw GitHub CDN URLs (`raw.githubusercontent.com/.../HEAD/...`).
+  - Supports `md_in_html` with centered badges, GitHub shields, SVG logos, and Discord buttons.
+* **🖥️ Universal Cross-Device App**:
+  - Fully responsive across **Desktop**, **Tablet**, and **Mobile** with PWA support.
+  - Standalone frameless desktop app launcher (`FondPeaceStudio.bat` / `launch_app.py`) that operates without browser URL bars or window clutter.
+* **📄 One-Click Viral Social Captions**: Automatically generates clean plain-text captions with emojis and 25+ viral developer hashtags ready to paste directly on Instagram, YouTube Shorts, Threads, and Facebook Reels.
 
 ---
 
-## 🏗️ Architecture & Processing Pipeline
+## 🏗️ Architecture & Pipeline
 
 ```mermaid
 flowchart TD
-    A[🔥 GitHub Breakout Repos] --> B[📄 Asset & README Normalizer]
-    B --> C[🧠 Gemini AI Scriptwriter]
-    C --> D[🎙️ DeepMind Neural TTS Engine]
-    D --> E[🎧 Whisper AI Word Alignment]
-    B --> F[📱 9:16 Playwright Mobile Canvas]
+    subgraph Input_Sources [Input Sources]
+        A1[🐙 GitHub Breakout Repos]
+        A2[🌐 Web URLs & Articles]
+        A3[🤖 AI & Tech News]
+        A4[✍️ Custom Prompts & Scripts]
+    end
+
+    subgraph Content_Processing [Content Processing]
+        B[📄 Asset Normalizer & Markdown Parser]
+        C[🧠 Gemini AI Scriptwriter]
+        D[🎙️ DeepMind Neural TTS Engine]
+        E[🎧 Whisper AI Word Alignment]
+    end
+
+    subgraph Studio_Stage [Studio Stage]
+        F[📱 9:16 Playwright Mobile Canvas]
+        G[🔍 OpenCV Neon Sync Marker Detection]
+    end
+
+    subgraph Render_Output [Production Output]
+        H[🎬 FFmpeg Broadcast Multiplexer]
+        I1[📦 1080x1920 MP4 Viral Reel]
+        I2[📄 Platform-Optimized Social Caption]
+    end
+
+    Input_Sources --> B
+    B --> C
+    C --> D
+    D --> E
+    B --> F
     E --> F
-    F --> G[🔍 OpenCV Neon Sync Marker Detection]
-    D --> H[🎬 FFmpeg Broadcast Multiplexer]
+    F --> G
+    D --> H
     G --> H
-    H --> I[📦 9:16 Viral MP4 Reel + Clean Caption]
+    H --> I1
+    C --> I2
 ```
 
 ---
@@ -84,7 +187,7 @@ flowchart TD
 ## ⚡ Quickstart Guide
 
 ### 1. Prerequisites
-Ensure you have **Python 3.10+** and **FFmpeg** installed (FFmpeg is automatically handled via `imageio-ffmpeg`).
+Ensure you have **Python 3.10+** installed. (FFmpeg is automatically handled via `imageio-ffmpeg`).
 
 ### 2. Clone the Repository
 ```bash
@@ -102,8 +205,8 @@ playwright install chromium
 
 ## 💻 Running WebVideoStudio
 
-### Option A: Standalone Native Desktop App (Recommended)
-Launch the frameless desktop app with zero address bar and native OS windowing:
+### Option A: Standalone Frameless Desktop App (Recommended)
+Launch the studio as an independent desktop application with zero browser address bars:
 
 * **Windows**: Double-click `FondPeaceStudio.bat` or run:
 ```bash
@@ -115,12 +218,13 @@ Run the FastAPI development server:
 ```bash
 python server.py
 ```
-Open **http://127.0.0.1:8000** in your browser.
+Open **http://127.0.0.1:8000** in your browser or install it as a PWA on mobile.
 
 ### Option C: CLI Mode (Headless Batch Automation)
-Render a viral reel for today's #1 breakout repository directly from terminal:
+Render a viral reel directly from terminal:
+
 ```bash
-# Render today's #1 trending repo
+# Render today's #1 trending GitHub repo
 python build_gittrend_reel.py
 
 # Render a specific custom GitHub repository
@@ -142,8 +246,8 @@ DEFAULT_DEEPMIND_VOICE=Puck
 DEFAULT_SCROLL_SPEED_PPS=28.0
 INITIAL_HOLD_SEC=1.8
 
-# Branding
-DEFAULT_BRAND_TEXT=@FondPeace
+# Social Branding
+DEFAULT_BRAND_TEXT=@fondpeacecrazy
 ```
 
 ---
@@ -152,10 +256,11 @@ DEFAULT_BRAND_TEXT=@FondPeace
 
 ```
 WebVideoStudio/
-├── assets/                  # High-resolution README screenshots, reel demos & icons
+├── assets/                  # High-resolution UI screenshots, reel demos & branding
 │   ├── studio_ui.png        # Desktop studio interface preview
 │   ├── reel_preview.jpg     # 9:16 mobile reel visual demo
 │   ├── capcut_captions.jpg  # CapCut kinetic captions showcase
+│   ├── cyan_reel.jpg        # Electric cyan cyberpunk style showcase
 │   └── app_icon.png         # 512x512 app logo
 ├── static/                  # Web app front-end (HTML, CSS, JS, PWA assets)
 │   ├── index.html           # Universal responsive studio layout
@@ -193,5 +298,5 @@ Contributions, feature suggestions, and pull requests are warmly welcomed!
 Distributed under the **MIT License**. See `LICENSE` for more information.
 
 <div align="center">
-<sub>Engineered with precision for viral open-source storytelling.</sub>
+<sub>Engineered with precision for viral open-source and developer storytelling. Built with ❤️ by <a href="https://github.com/jastfan">jastfan</a> & <a href="https://www.youtube.com/channel/UCXUG7LfzEiIgv3Rvf5r01SQ">FondPeace</a>.</sub>
 </div>
