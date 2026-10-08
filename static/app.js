@@ -182,24 +182,23 @@ function setupEventListeners() {
   btnRender.addEventListener('click', startReelRender);
 }
 
-// 2. Draggable Branding Engine (translates 360x640 preview to 720x1280 master space)
+// 2. Draggable Branding Engine (Touch & Mouse with dynamic aspect-ratio scaling)
 function initDraggableBranding() {
   let isDragging = false;
   let startX, startY, initialLeft, initialTop;
 
-  draggableBranding.addEventListener('mousedown', (e) => {
+  function onStart(clientX, clientY) {
     isDragging = true;
-    startX = e.clientX;
-    startY = e.clientY;
+    startX = clientX;
+    startY = clientY;
     initialLeft = draggableBranding.offsetLeft;
     initialTop = draggableBranding.offsetTop;
-    e.preventDefault();
-  });
+  }
 
-  document.addEventListener('mousemove', (e) => {
+  function onMove(clientX, clientY) {
     if (!isDragging) return;
-    const dx = e.clientX - startX;
-    const dy = e.clientY - startY;
+    const dx = clientX - startX;
+    const dy = clientY - startY;
 
     const canvasRect = canvasStage.getBoundingClientRect();
     const elemRect = draggableBranding.getBoundingClientRect();
@@ -210,16 +209,45 @@ function initDraggableBranding() {
     draggableBranding.style.left = `${newLeft}px`;
     draggableBranding.style.top = `${newTop}px`;
 
-    // Map 360x640 preview coordinates to 720x1280 video space
-    brandConfig.x = Math.round(newLeft * 2);
-    brandConfig.y = Math.round(newTop * 2);
+    // Dynamic scale mapping to 720x1280 master canvas
+    const scaleX = 720 / (canvasRect.width || 360);
+    const scaleY = 1280 / (canvasRect.height || 640);
+    brandConfig.x = Math.round(newLeft * scaleX);
+    brandConfig.y = Math.round(newTop * scaleY);
 
-    posReadout.innerText = `📍 Branding Position: X: ${brandConfig.x}px | Y: ${brandConfig.y}px (720x1280 Master)`;
-  });
+    if (posReadout) {
+      posReadout.innerText = `📍 Branding Position: X: ${brandConfig.x}px | Y: ${brandConfig.y}px (720x1280 Master)`;
+    }
+  }
 
-  document.addEventListener('mouseup', () => {
+  function onEnd() {
     isDragging = false;
+  }
+
+  // Mouse events (Desktop / Laptop)
+  draggableBranding.addEventListener('mousedown', (e) => {
+    onStart(e.clientX, e.clientY);
+    e.preventDefault();
   });
+  document.addEventListener('mousemove', (e) => onMove(e.clientX, e.clientY));
+  document.addEventListener('mouseup', onEnd);
+
+  // Touch events (Mobile phone, Tablet, Surface)
+  draggableBranding.addEventListener('touchstart', (e) => {
+    if (e.touches.length > 0) {
+      onStart(e.touches[0].clientX, e.touches[0].clientY);
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  document.addEventListener('touchmove', (e) => {
+    if (isDragging && e.touches.length > 0) {
+      onMove(e.touches[0].clientX, e.touches[0].clientY);
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  document.addEventListener('touchend', onEnd);
 }
 
 // 3. Load Trending Repositories
@@ -278,6 +306,10 @@ function renderTrendingCards(repos) {
       document.querySelectorAll('.repo-card').forEach(c => c.classList.remove('active'));
       card.classList.add('active');
       selectRepo(repo);
+      if (window.innerWidth <= 991) {
+        showMobileToast(`✨ Loaded ${repo.name}!`);
+        setTimeout(() => switchToMobileTab('panel-studio'), 450);
+      }
     });
 
     trendingContainer.appendChild(card);
@@ -605,12 +637,99 @@ navTabs.forEach(tab => {
   });
 });
 
-// Service Worker Registration for Offline App Mode
+// Service Worker Registration for Offline App Mode (Root Scope)
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/static/sw.js').catch(err => {
+    navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(err => {
       console.log('SW registration error:', err);
     });
   });
 }
+
+// Mobile Toast Notification Helper
+function showMobileToast(msg) {
+  const toast = document.getElementById('mobile-toast');
+  if (!toast) return;
+  toast.innerText = msg;
+  toast.style.display = 'block';
+  clearTimeout(window._toastTimeout);
+  window._toastTimeout = setTimeout(() => {
+    toast.style.display = 'none';
+  }, 2800);
+}
+
+// Function to switch tab programmatically on mobile
+function switchToMobileTab(tabId) {
+  if (window.innerWidth > 991) return;
+  const navBtn = document.querySelector(`.nav-tab[data-target="${tabId}"]`);
+  if (navBtn) {
+    navTabs.forEach(t => t.classList.remove('active'));
+    navBtn.classList.add('active');
+    Object.values(panels).forEach(p => p && p.classList.remove('tab-active'));
+    if (panels[tabId]) {
+      panels[tabId].classList.add('tab-active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+}
+
+// ==========================================================================
+// MULTI-DEVICE & LAN MOBILE CONNECT MODAL
+// ==========================================================================
+const btnConnectMobile = document.getElementById('btn-connect-mobile');
+const deviceModal = document.getElementById('device-connect-modal');
+const btnCloseDeviceModal = document.getElementById('btn-close-device-modal');
+const lanUrlText = document.getElementById('lan-url-text');
+const btnCopyLanUrl = document.getElementById('btn-copy-lan-url');
+const qrContainer = document.getElementById('lan-qrcode-container');
+
+async function openDeviceConnectModal() {
+  if (!deviceModal) return;
+  deviceModal.style.display = 'flex';
+
+  try {
+    const res = await fetch('/api/network-info');
+    const data = await res.json();
+    const url = data.lan_url || `http://${window.location.hostname}:8000`;
+    
+    if (lanUrlText) lanUrlText.innerText = url;
+    
+    // Render QR code
+    if (qrContainer) {
+      const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(url)}&bgcolor=ffffff&color=090d16&margin=1`;
+      qrContainer.innerHTML = `<img src="${qrApiUrl}" alt="Scan QR Code" width="180" height="180" style="display:block; border-radius:8px;" onerror="this.onerror=null; this.src='https://chart.googleapis.com/chart?chs=180x180&cht=qr&chl=' + encodeURIComponent('${url}');">`;
+    }
+  } catch (err) {
+    if (lanUrlText) lanUrlText.innerText = window.location.origin;
+  }
+}
+
+if (btnConnectMobile) {
+  btnConnectMobile.addEventListener('click', openDeviceConnectModal);
+}
+
+if (btnCloseDeviceModal) {
+  btnCloseDeviceModal.addEventListener('click', () => {
+    deviceModal.style.display = 'none';
+  });
+}
+
+if (deviceModal) {
+  deviceModal.addEventListener('click', (e) => {
+    if (e.target === deviceModal) {
+      deviceModal.style.display = 'none';
+    }
+  });
+}
+
+if (btnCopyLanUrl) {
+  btnCopyLanUrl.addEventListener('click', () => {
+    const text = lanUrlText.innerText;
+    navigator.clipboard.writeText(text);
+    const orig = btnCopyLanUrl.innerText;
+    btnCopyLanUrl.innerText = '✅ Copied!';
+    setTimeout(() => { btnCopyLanUrl.innerText = orig; }, 2000);
+  });
+}
+
 

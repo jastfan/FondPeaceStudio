@@ -28,7 +28,6 @@ TEMP_DIR.mkdir(exist_ok=True)
 from trending_fetcher import fetch_trending_repos, fetch_repo_readme, fetch_repo_metadata, parse_github_url_or_name
 from script_generator import generate_voiceover_script
 from tts_engine import generate_voiceover_audio
-from build_gittrend_reel import build_instant_gittrend_reel
 from config import GEMINI_KEYS, DEFAULT_DEEPMIND_VOICE, NORMAL_SCROLL_SPEED_PPS
 
 app = FastAPI(title="FondPeace Studio — GitTrend Reel Engine", version="3.0")
@@ -145,6 +144,7 @@ def run_render_task(req: RenderRequest):
         job_progress["message"] = msg
 
     try:
+        from build_gittrend_reel import build_instant_gittrend_reel
         result = asyncio.run(build_instant_gittrend_reel(
             repo_target=req.repo_name,
             voice_name=req.voice_name,
@@ -194,6 +194,48 @@ async def list_videos():
         })
     return {"videos": videos}
 
+import socket
+
+def get_lan_ip():
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        s.connect(("8.8.8.8", 80))
+        ip = s.getsockname()[0]
+    except Exception:
+        ip = "127.0.0.1"
+    finally:
+        s.close()
+    return ip
+
+@app.get("/api/network-info")
+async def get_network_info():
+    ip = get_lan_ip()
+    return {
+        "local_url": "http://127.0.0.1:8000",
+        "lan_url": f"http://{ip}:8000",
+        "lan_ip": ip,
+        "port": 8000
+    }
+
+# Root PWA and Static Endpoints
+@app.get("/manifest.json", response_class=FileResponse)
+async def serve_manifest():
+    return FileResponse(STATIC_DIR / "manifest.json", media_type="application/manifest+json")
+
+@app.get("/sw.js", response_class=FileResponse)
+async def serve_sw():
+    return FileResponse(STATIC_DIR / "sw.js", media_type="application/javascript", headers={"Service-Worker-Allowed": "/"})
+
+@app.get("/favicon.ico", response_class=FileResponse)
+async def serve_favicon():
+    return FileResponse(STATIC_DIR / "icon-192.png", media_type="image/png")
+
+@app.get("/showcase", response_class=FileResponse)
+@app.get("/caption-showcase", response_class=FileResponse)
+@app.get("/caption_showcase.html", response_class=FileResponse)
+async def serve_showcase():
+    return FileResponse(STATIC_DIR / "caption_showcase.html")
+
 # Mount static and output folders
 app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
 app.mount("/output", StaticFiles(directory=str(OUTPUT_DIR)), name="output")
@@ -204,6 +246,11 @@ async def serve_index():
 
 if __name__ == "__main__":
     import uvicorn
-    from datetime import datetime
-    print("🚀 Starting FondPeace Studio Server on http://127.0.0.1:8000 ...")
-    uvicorn.run("server:app", host="127.0.0.1", port=8000, reload=False)
+    lan_ip = get_lan_ip()
+    print("=" * 60)
+    print("🚀 FondPeace Studio Server Online (Multi-Device Enabled)")
+    print(f"🖥️  Local Machine:  http://127.0.0.1:8000")
+    print(f"📱 Phone & LAN:    http://{lan_ip}:8000")
+    print("=" * 60)
+    uvicorn.run("server:app", host="0.0.0.0", port=8000, reload=False)
+

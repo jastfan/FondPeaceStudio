@@ -2,17 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <title>FondPeaceStudio — Autonomous Viral Reel Engine</title>
   
-  <!-- PWA & Native App Meta Tags -->
-  <link rel="manifest" href="/static/manifest.json">
+  <!-- PWA & Native App Meta Tags (Android, iOS, iPadOS, macOS, Windows) -->
+  <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#070913">
+  
+  <!-- Android & General Web App -->
   <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="FondPeace Studio">
+
+  <!-- iOS & iPadOS Safari Standalone PWA -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="FondPeace Studio">
   <link rel="apple-touch-icon" href="/static/icon-192.png">
-  <link rel="icon" type="image/png" href="/static/icon-192.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="/static/icon-192.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="/static/icon-512.png">
+  
+  <!-- Windows & Browser Favicons -->
+  <meta name="msapplication-TileColor" content="#070913">
+  <meta name="msapplication-TileImage" content="/static/icon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/static/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/static/icon-512.png">
+  <link rel="shortcut icon" href="/favicon.ico">
 
   <link rel="stylesheet" href="/static/style.css">
 </head>
@@ -32,6 +46,10 @@
         <span class="pulse-dot"></span>
         <span id="api-status-text">DeepMind TTS Ready</span>
       </div>
+      <button id="btn-connect-mobile" class="btn-connect-devices" title="Connect Phone, Tablet, or LAN Devices">
+        <span>📱</span>
+        <span>Connect Device</span>
+      </button>
       <button id="btn-install-pwa" class="btn-install-app" title="Install as standalone desktop/mobile app" style="display: none;">
         <span>📲</span>
         <span>Install App</span>
@@ -300,6 +318,47 @@
       <span class="nav-label">Library</span>
     </button>
   </nav>
+
+  <!-- Multi-Device LAN & Mobile Modal -->
+  <div id="device-connect-modal" class="modal-backdrop" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 20px;">📱</span>
+          <span style="font-weight: 800; font-size: 16px;">Connect Phone / Tablet</span>
+        </div>
+        <button id="btn-close-device-modal" class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">
+          Scan the QR code or open the link on your phone/tablet connected to the same Wi-Fi network:
+        </p>
+        
+        <div class="lan-url-box">
+          <span id="lan-url-text" class="lan-url-text">http://10.231.34.170:8000</span>
+          <button id="btn-copy-lan-url" class="btn-copy-chip">📋 Copy</button>
+        </div>
+
+        <div id="lan-qrcode-container" class="qrcode-wrapper">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <div class="device-tips">
+          <div class="tip-row">
+            <span>📲</span>
+            <span><strong>Install as App:</strong> Tap your browser menu & select <em>"Add to Home Screen"</em> or <em>"Install App"</em> on your phone.</span>
+          </div>
+          <div class="tip-row">
+            <span>⚡</span>
+            <span><strong>Zero Setup:</strong> Generate viral reels, edit scripts, and preview vertical canvas anywhere!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Floating Notification Toast -->
+  <div id="mobile-toast" class="mobile-toast" style="display: none;"></div>
 
   <script src="/static/app.js"></script>
 </body>

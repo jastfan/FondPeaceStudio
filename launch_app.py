@@ -34,24 +34,32 @@ def ensure_server_running():
 
     print("🚀 Starting FondPeace Studio background engine...")
     server_script = BASE_DIR / "server.py"
-    # Launch detached server process
+    log_file = BASE_DIR / "server.log"
+    log_fp = open(log_file, "a", encoding="utf-8")
+
+    pythonw = Path(sys.executable).with_name("pythonw.exe")
+    exe_to_use = str(pythonw) if pythonw.exists() else sys.executable
+
+    # Launch detached server process with pythonw (official Windows headless python)
     if os.name == 'nt':
         proc = subprocess.Popen(
-            [sys.executable, str(server_script)],
+            [exe_to_use, str(server_script)],
             cwd=str(BASE_DIR),
-            creationflags=subprocess.CREATE_NO_WINDOW | subprocess.DETACHED_PROCESS
+            stdout=log_fp,
+            stderr=log_fp,
+            close_fds=True
         )
     else:
         proc = subprocess.Popen(
-            [sys.executable, str(server_script)],
+            [exe_to_use, str(server_script)],
             cwd=str(BASE_DIR),
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL
+            stdout=log_fp,
+            stderr=log_fp
         )
 
-    # Wait for server to become responsive
-    for _ in range(30):
-        time.sleep(0.3)
+    # Wait for server to become responsive (Torch/Whisper takes ~8-12s)
+    for i in range(60):
+        time.sleep(0.5)
         if is_server_online():
             print("✨ FondPeace Studio engine online!")
             return proc
@@ -61,16 +69,28 @@ def ensure_server_running():
 
 def find_app_browser():
     candidates = [
-        # Chrome
+        # Windows Chrome
         r"C:\Program Files\Google\Chrome\Application\chrome.exe",
         r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
         os.path.expandvars(r"%LOCALAPPDATA%\Google\Chrome\Application\chrome.exe"),
-        # Edge
+        # Windows Edge
         r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
         r"C:\Program Files\Microsoft\Edge\Application\msedge.exe",
         os.path.expandvars(r"%LOCALAPPDATA%\Microsoft\Edge\Application\msedge.exe"),
-        # Brave
+        # Windows Brave
         r"C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe",
+        # macOS Chrome / Edge / Brave
+        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+        "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
+        "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser",
+        os.path.expanduser("~/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"),
+        # Linux
+        "/usr/bin/google-chrome",
+        "/usr/bin/google-chrome-stable",
+        "/usr/bin/chromium",
+        "/usr/bin/chromium-browser",
+        "/usr/bin/brave-browser",
+        "/usr/bin/microsoft-edge",
     ]
     for c in candidates:
         if os.path.exists(c):
@@ -87,17 +107,12 @@ def launch_native_app():
         webbrowser.open(SERVER_URL)
         return
 
-    print(f"🎬 Opening FondPeace Studio in standalone native window (No URL / Frameless)...")
+    print("🎬 Opening FondPeace Studio in standalone native window (No URL / Frameless)...")
     cmd = [
         browser,
         f"--app={SERVER_URL}",
         "--window-size=1460,940",
-        "--window-position=50,30",
-        f"--user-data-dir={str(APP_DATA_DIR)}",
-        "--disable-features=Translate",
-        "--disable-sync",
-        "--no-first-run",
-        "--no-default-browser-check"
+        "--window-position=50,30"
     ]
     subprocess.Popen(cmd)
     print("🎉 FondPeace Studio App launched successfully!")
