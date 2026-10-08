@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-python.black-formatter",
+    "esbenp.prettier-vscode",
+    "usernamehw.errorlens",
+    "eamodio.gitlens",
+    "pkief.material-icon-theme",
+    "formulahendry.auto-rename-tag",
+    "ritwickdey.liveserver",
+    "christian-kohler.path-intellisense"
+  ]
+}
