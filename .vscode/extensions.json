@@ -1,14 +1,14 @@
 {
   "recommendations": [
-    "mhutchie.git-graph",
-    "cweijan.vscode-database-client2",
-    "humao.rest-client",
-    "alefragnani.project-manager",
+    "foam.foam-vscode",
+    "hediet.vscode-drawio",
+    "gruntfuggly.todo-tree",
     "alefragnani.Bookmarks",
-    "johnpapa.peacock",
-    "streetsidesoftware.code-spell-checker",
+    "alefragnani.project-manager",
+    "cweijan.vscode-database-client2",
+    "mhutchie.git-graph",
     "usernamehw.errorlens",
-    "catppuccin.catppuccin-vsc",
-    "pkief.material-icon-theme"
+    "streetsidesoftware.code-spell-checker",
+    "catppuccin.catppuccin-vsc"
   ]
 }
